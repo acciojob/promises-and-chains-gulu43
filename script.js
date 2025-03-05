@@ -32,7 +32,7 @@
                 }else{
                     return reject("Oh sorry . You aren't old enough.",name_v);
                 }
-            },3000);
+            },4000);
         });
         return promise_obj;
 
