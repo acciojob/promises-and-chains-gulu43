@@ -6,8 +6,9 @@
     btn.addEventListener('click',(e)=>{
         e.preventDefault();
         if(age_var.value == "" || name_var.value == ""){
-            throw new Error("age or name can not be empty");
-            // alert(" age or name can not be empty");
+            // throw new Error("age or name can not be empty");
+            alert("Please enter valid details.");
+			return;
         }
         // console.log(age_var.value, name_var.value);
         varify_fn(age_var.value,name_var.value)
