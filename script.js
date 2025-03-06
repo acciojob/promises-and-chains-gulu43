@@ -1,9 +1,9 @@
-//your JS code here. If required.
     let age_var = document.querySelector("#age");
     let name_var = document.querySelector("#name");
     let btn = document.querySelector("#btn");
-
-    btn.addEventListener('click',(e)=>{
+    let form = document.querySelector("#f");
+    
+    form.addEventListener('submit',(e)=>{
         e.preventDefault();
         if(age_var.value == "" || name_var.value == ""){
             // throw new Error("age or name can not be empty");
@@ -33,7 +33,7 @@
                 }else{
                     return reject("Oh sorry . You aren't old enough.",name_v);
                 }
-            },4000);
+            },3000);
         });
         return promise_obj;
 
