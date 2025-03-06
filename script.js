@@ -29,9 +29,9 @@
         let promise_obj = new Promise((resolve,reject)=>{
             setTimeout(()=>{
                 if (age_v>18) {
-                    return resolve("Welcome, . You can vote.",name_v);
+                    return resolve("Welcome, . You can vote.");
                 }else{
-                    return reject("Oh sorry . You aren't old enough.",name_v);
+                    return reject("Oh sorry . You aren't old enough.");
                 }
             },3000);
         });
