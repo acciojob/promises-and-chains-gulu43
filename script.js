@@ -7,8 +7,8 @@ form.addEventListener('submit', (e) => {
     e.preventDefault();
 
     if (age_var.value.trim() === "" || name_var.value.trim() === "") {
-        alert("Please enter valid details.");
-		console.log('Please enter valid details.');
+        alert("Please enter valid details");
+		console.log('Please enter valid details');
         return;
     }
 
