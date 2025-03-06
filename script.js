@@ -1,47 +1,27 @@
-    let age_var = document.querySelector("#age");
-    let name_var = document.querySelector("#name");
-    let btn = document.querySelector("#btn");
-    let form = document.querySelector("#f");
-    
-    form.addEventListener('submit',(e)=>{
-        e.preventDefault();
-        if(age_var.value == "" || name_var.value == ""){
-            // throw new Error("age or name can not be empty");
-            alert("Please enter valid details.");
-			return;
-        }
-        // console.log(age_var.value, name_var.value);
-        varify_fn(age_var.value,name_var.value)
-        .then((message)=>{
-            alert(message);
-        })
-        .catch((message)=>{
-            alert(message);
-        })
-        // .finally((message)=>{
-        //     alert(message);
-        // });
-        
-        
-    });
+const form = document.getElementById('votingForm');
+        const ageInput = document.getElementById('age');
+        const nameInput = document.getElementById('name');
 
-    let varify_fn = (age_v,name_v)=>{
-        let promise_obj = new Promise((resolve,reject)=>{
-            setTimeout(()=>{
-                if (age_v>18) {
-                    return resolve("Welcome, . You can vote.");
-                }else{
-                    return reject("Oh sorry . You aren't old enough.");
-                }
-            },3000);
-        });
-        return promise_obj;
+        form.addEventListener('submit', (event) => {
+    event.preventDefault(); // Prevent page reload
 
-        // return new Promise((resolve,reject)=>{
-        //     if (age_v>18) {
-        //         return resolve("Welcome, . You can vote.",name_v);
-        //     }else{
-        //         return reject("Oh sorry . You aren't old enough.",name_v);
-        //     }
-        // })
+    const userName = nameInput.value.trim();
+    const userAge = parseInt(ageInput.value);
+
+    if (!userName || isNaN(userAge)) {
+        alert('Please enter valid details'); // Removed period to match Cypress test
+        return;
     }
+
+    new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (userAge > 18) {
+                resolve(Welcome, ${userName}. You can vote.);
+            } else {
+                reject(Oh sorry ${userName}. You aren't old enough.);
+            }
+        }, 4000);
+    })
+    .then((message) => alert(message))
+    .catch((error) => alert(error));
+});
